@@ -1,0 +1,8 @@
+{
+  "tasks": [
+    { "id": 1, "subject": "Do the laundry", "priority": 100 },
+    { "id": 2, "subject": "Feed the cat", "priority": 90 },
+    { "id": 3, "subject": "...profit", "priority": 20 },
+    { "id": 4, "subject": "Try to take over the world", "priority": 20 }
+  ]
+}

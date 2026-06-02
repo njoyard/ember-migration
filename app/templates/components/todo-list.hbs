@@ -1,0 +1,14 @@
+{{! template-lint-disable no-action no-implicit-this require-input-label no-curly-component-invocation }}
+<h2>{{title}}</h2>
+
+Sort by <select onchange={{action "sortingChanged" value="target.value"}}>
+  <option value="id">Creation order</option>
+  <option value="subject">Text</option>
+  <option value="priority:desc">Priority</option>
+</select>
+
+<ul>
+  {{#each sortedTasks as |task|}}
+    <li data-task-id={{task.id}}>{{task.subject}} (py: {{task.priority}})</li>
+  {{/each}}
+</ul>
