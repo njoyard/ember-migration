@@ -17,6 +17,6 @@ module('Integration | Component | todo-list', function (hooks) {
     assert.dom(this.element).containsText('my list');
     assert.dom('li').exists({ count: 2 });
     assert.dom('li[data-task-id="200"]').containsText('foo');
-    assert.dom('li[data-task-id="300"]').hasText('bar (py: 3)');
+    assert.dom('li[data-task-id="300"]').hasText('bar (py: 3) - never done');
   });
 });

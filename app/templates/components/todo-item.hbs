@@ -1,0 +1,9 @@
+<li data-task-id={{@task.id}}>
+  {{@task.subject}} (py: {{@task.priority}})
+  -
+  {{#if @task.instances}}
+    done for {{@task.totalDuration}} hours
+  {{else}}
+    never done
+  {{/if}}
+</li>

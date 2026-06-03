@@ -9,6 +9,6 @@ Sort by <select onchange={{action "sortingChanged" value="target.value"}}>
 
 <ul>
   {{#each sortedTasks as |task|}}
-    <li data-task-id={{task.id}}>{{task.subject}} (py: {{task.priority}})</li>
+    <TodoItem @task={{task}} />
   {{/each}}
 </ul>
