@@ -1,57 +1,24 @@
 # ember-migration
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a small test app that can serve as a pairing tool on migrating older apps.
 
-## Prerequisites
+The setup is:
+* Node 22
+* pnpm
+* Ember 3.28
+* ember-auto-import 2 + webpack 5
+* LttF
 
-You will need the following things properly installed on your computer.
+## App structure
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/)
-* [Yarn](https://yarnpkg.com/)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+* Data
+  * Two models: `Task -1--n-> Duration` with a sync `hasMany`
+  * uses `ActiveModelAdapter` as the application adapter (rails-style REST)
+  * `/public/tasks` is a JSON file to mock an API response
+* A single index route fetches tasks and passes them to `<TaskList>`
+* `TaskList` renders `<TaskItem>` in a loop, and allows changing order
 
-## Installation
+## Potential pairing topics
 
-* `git clone <repository-url>` this repository
-* `cd ember-migration`
-* `yarn install`
-
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `yarn lint`
-* `yarn lint:fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+* Migration to GJS (fixing lint violations, using codemods, native classes...)
+* Mocking data in tests (ember-cli-mirage vs msw for example)
